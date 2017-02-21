@@ -19,7 +19,7 @@ public class GsonModule extends AbstractModule {
         Gson gson = new GsonBuilder().registerTypeAdapter(LocalDateTime.class, new TypeAdapter<LocalDateTime>() {
             @Override
             public void write(JsonWriter jsonWriter, LocalDateTime o) throws IOException {
-                jsonWriter.jsonValue(o.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
+                jsonWriter.value(o.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
             }
 
             @Override

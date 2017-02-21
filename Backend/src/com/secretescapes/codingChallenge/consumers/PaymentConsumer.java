@@ -53,6 +53,6 @@ public class PaymentConsumer {
         accountPersistance.updateAccount(toAccount);
 
         result.addProperty("success", true);
-        return result.getAsString();
+        return result.toString();
     }
 }
