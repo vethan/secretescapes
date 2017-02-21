@@ -1,0 +1,43 @@
+<template>
+  <require from="blur-image"></require>
+
+  <section class="au-animate">
+    <h2>${heading}</h2>
+
+    <br/>
+    ${errorMessage}<br/>
+    <form role="form" submit.delegate="submit()">
+       <div class="form-group">
+        <label for="person">Person</label>
+          <select id = "person" class="form-control" value.bind="selectedPerson">
+        <option value="">-Choose Account-</option>
+        <option value="${account._id}"                
+                repeat.for="account of accountList">${account.name}</option>
+        </select>
+      </div>
+     <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+
+  ------------------------------------------------------
+  <div>Balance: £${accountBalance/100}</div>
+  <div>some awesome table with transaction amounts
+    <table border="1">
+      <tr>
+        <td>From</td>
+        <td>To</td>
+        <td>Amount</td>
+        <td>Time</td>
+      </tr>
+      <tr repeat.for="transaction of transactionList">
+        <td>${accountMap[transaction.fromAccount].name}</td>
+        <td>${accountMap[transaction.toAccount].name}</td>
+        <td>£${transaction.transferAmount/100}</td>
+        <td>${transaction.transactionTime}</td>
+      </tr>
+    </table>
+
+  </div>
+          </div>
+
+  </section>
+</template>

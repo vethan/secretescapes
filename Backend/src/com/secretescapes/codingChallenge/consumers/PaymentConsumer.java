@@ -28,8 +28,8 @@ public class PaymentConsumer {
         JsonObject result = new JsonObject();
         if (transferAmount < 1) {
             result.addProperty("success", false);
-            result.addProperty("errorMessage", "Cannot transfer less that £0.01");
-            return result.getAsString();
+            result.addProperty("errorMessage", "Cannot transfer less than £0.01");
+            return result.toString();
         }
         Account fromAccount = accountPersistance.getAccount(fromAccountId);
         Account toAccount = accountPersistance.getAccount(toAccountId);
@@ -37,7 +37,7 @@ public class PaymentConsumer {
         if (fromAccount.balance < transferAmount) {
             result.addProperty("success", false);
             result.addProperty("errorMessage", "Cannot transfer more money than is in the account");
-            return result.getAsString();
+            return result.toString();
         }
 
         fromAccount.balance -= transferAmount;
