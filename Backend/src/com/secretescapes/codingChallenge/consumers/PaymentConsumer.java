@@ -51,6 +51,9 @@ public class PaymentConsumer {
         transactionPersistance.storeNewTransaction(transaction);
         accountPersistance.updateAccount(fromAccount);
         accountPersistance.updateAccount(toAccount);
+        String amountString = "£" + (transferAmount * 0.01f);
+        mailer.SendEmail(fromAccount.emailAddress, "You've made a payment", "You've successfully paid " + toAccount.name + " " + amountString);
+        mailer.SendEmail(toAccount.emailAddress, "You've made a payment", "You've recieved " + amountString + " from " + fromAccount.name);
 
         result.addProperty("success", true);
         return result.toString();

@@ -40,7 +40,7 @@ export class Payment {
       return;
     }
 
-    var transferInfo = { fromAccount: this.selectedFrom, toAccount: this.selectedTo,amount: Number(this.selectedAmount) };
+    var transferInfo = { fromAccount: this.selectedFrom, toAccount: this.selectedTo,amount: Number(this.selectedAmount)*100 };
     this.http.fetch('makePayment', {
         method: 'post',
         body: JSON.stringify(transferInfo)
