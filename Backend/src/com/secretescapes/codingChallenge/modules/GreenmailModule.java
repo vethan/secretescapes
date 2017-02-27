@@ -20,7 +20,6 @@ public class GreenmailModule extends AbstractModule {
         bind(String.class).annotatedWith(Names.named("email_host")).toInstance(LOCALHOST);
         bind(String.class).annotatedWith(Names.named("email_user_address")).toInstance(EMAIL_USER_ADDRESS);
         bind(String.class).annotatedWith(Names.named("email_user_password")).toInstance(USER_PASSWORD);
-
         GreenMail greenMail = new GreenMail(ServerSetupTest.SMTP);
         greenMail.start();
         greenMail.setUser(EMAIL_USER_ADDRESS, USER_NAME, USER_PASSWORD);
@@ -34,4 +33,5 @@ public class GreenmailModule extends AbstractModule {
         bind(Session.class).toInstance(session);
         bind(GreenMail.class).toInstance(greenMail);
     }
+
 }

@@ -29,12 +29,12 @@ public class MailSender {
         this.password = password;
     }
 
-    public void SendEmail(String toAddress, String subject, String body) {
+    public void sendEmail(String toAddress, String subject, String body) {
         try {
             Message msg = new MimeMessage(mailSession);
-            msg.setFrom(new InternetAddress(toAddress));
+            msg.setFrom(new InternetAddress(fromAddress));
             msg.setRecipients(Message.RecipientType.TO,
-                    InternetAddress.parse(fromAddress, false));
+                    InternetAddress.parse(toAddress, false));
             msg.setSubject(subject);
             msg.setText(body);
             msg.setSentDate(new Date());

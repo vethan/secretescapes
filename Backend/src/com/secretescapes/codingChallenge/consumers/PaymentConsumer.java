@@ -1,7 +1,6 @@
 package com.secretescapes.codingChallenge.consumers;
 
 import com.google.gson.JsonObject;
-import com.google.gson.internal.Streams;
 import com.google.inject.Inject;
 import com.secretescapes.codingChallenge.email.MailSender;
 import com.secretescapes.codingChallenge.model.Account;
@@ -52,8 +51,8 @@ public class PaymentConsumer {
         accountPersistance.updateAccount(fromAccount);
         accountPersistance.updateAccount(toAccount);
         String amountString = "£" + (transferAmount * 0.01f);
-        mailer.SendEmail(fromAccount.emailAddress, "You've made a payment", "You've successfully paid " + toAccount.name + " " + amountString);
-        mailer.SendEmail(toAccount.emailAddress, "You've made a payment", "You've recieved " + amountString + " from " + fromAccount.name);
+        mailer.sendEmail(fromAccount.emailAddress, "You've made a payment", "You've successfully paid " + toAccount.name + " " + amountString);
+        mailer.sendEmail(toAccount.emailAddress, "You've made a payment", "You've recieved " + amountString + " from " + fromAccount.name);
 
         result.addProperty("success", true);
         return result.toString();

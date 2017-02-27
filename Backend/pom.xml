@@ -64,9 +64,17 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.10</version>
+            <version>4.11</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.jukito</groupId>
+            <artifactId>jukito</artifactId>
+            <version>1.4.1</version>
+            <scope>test</scope>
+        </dependency>
+
         <dependency>
             <groupId>javax.mail</groupId>
             <artifactId>mail</artifactId>
@@ -78,11 +86,7 @@
             <artifactId>guice</artifactId>
             <version>4.1.0</version>
         </dependency>
-        <dependency>
-            <groupId>com.icegreen</groupId>
-            <artifactId>greenmail</artifactId>
-            <version>RELEASE</version>
-        </dependency>
+
 
     </dependencies>
 </project>
