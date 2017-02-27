@@ -1,12 +1,9 @@
 package com.secretescapes.codingChallenge;
 
-import com.google.inject.name.Names;
 import com.icegreen.greenmail.util.GreenMail;
 import com.icegreen.greenmail.util.ServerSetupTest;
 import com.secretescapes.codingChallenge.email.MailSender;
-import com.secretescapes.codingChallenge.modules.GreenmailModule;
 import org.jukito.JukitoRunner;
-import org.jukito.UseModules;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
