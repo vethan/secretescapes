@@ -1,1 +1,2 @@
-java -cp target/secret-escape-backend-1.jar Main
+mvn package
+java -cp target/secret-escape-backend-fat.jar Main
