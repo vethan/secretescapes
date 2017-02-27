@@ -16,7 +16,6 @@ import org.junit.runner.RunWith;
 import static org.mockito.Mockito.*;
 
 @RunWith(JukitoRunner.class)
-@UseModules(GreenmailModule.class)
 public class PaymentConsumerTest {
     private AccountPersistance accountPersistance;
     private TransactionPersistance transactionPersistance;
